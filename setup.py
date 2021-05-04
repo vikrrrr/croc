@@ -7,6 +7,6 @@ setup(
     author="vikrrrr",
     author_email="vikr@protonmail.com",
     license="MIT",
-    install_requires=["nmigen>=0.2", "pytest>=6.0.0"],
+    install_requires=["nmigen>=0.2"],
     packages=find_packages(),
 )
