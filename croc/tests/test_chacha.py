@@ -14,7 +14,7 @@ from .chacha_reference import (
 def test_staged_rounds():
     TEST_DATA = [
         # TODO add more test data for the staged rounds module
-        ([0 for n in range(16)], [0 for n in range(16)], Rounds.REDUCED_12, 2),
+        ([0 for _ in range(16)], [0 for _ in range(16)], Rounds.REDUCED_12, 2),
         (
             [n for n in range(16)],
             [

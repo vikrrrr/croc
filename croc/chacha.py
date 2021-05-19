@@ -1,5 +1,5 @@
 from functools import partial
-from enum import Enum, auto, unique
+from enum import Enum, unique
 
 from nmigen import *
 from nmigen.build import Platform
@@ -73,7 +73,7 @@ class StagedChaChaRounds(Elaboratable):
         # Encryption done output
         self.done_o = Signal()
 
-    def elaborate(self, platform: Platform) -> Module:
+    def elaborate(self, _: Platform) -> Module:
         m = Module()
 
         # Current stage
@@ -131,7 +131,7 @@ class DoubleRound(Elaboratable):
         # Output ChaCha state
         self.state_o = ChaChaState()
 
-    def elaborate(self, platform: Platform) -> Module:
+    def elaborate(self, _: Platform) -> Module:
         m = Module()
 
         quarter_rounds = [
@@ -173,7 +173,7 @@ class QuarterRound(Elaboratable):
         # Output ChaCha state
         self.state_o = ChaChaState()
 
-    def elaborate(self, platform: Platform) -> Module:
+    def elaborate(self, _: Platform) -> Module:
         m = Module()
 
         a, b, c, d = self.abcd
@@ -194,8 +194,6 @@ class QuarterRound(Elaboratable):
         c1 = (c0 + d3)[0:32]
         b2 = b1 ^ c1
         b3 = bit_rotate(b2, 7)
-
-        self.dbg_finals = [a1, b3, c1, d3]
 
         m.d.comb += [
             self.state_o.eq(self.state_i),
@@ -219,7 +217,7 @@ class RoundsFinish(Elaboratable):
         # Output ChaCha state
         self.state_o = ChaChaState()
 
-    def elaborate(self, platform: Platform) -> Module:
+    def elaborate(self, _: Platform) -> Module:
         m = Module()
 
         m.d.comb += [

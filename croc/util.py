@@ -7,7 +7,7 @@ T = TypeVar("T")
 
 
 def window(seq: Sequence[T], n: int) -> Iterable[Sequence[T]]:
-    """Iterate a rolling window on a sequence"""
+    """Iterate a rolling window of length `n` on `seq`"""
 
     from itertools import islice
 
@@ -22,8 +22,9 @@ def window(seq: Sequence[T], n: int) -> Iterable[Sequence[T]]:
         yield result
 
 
+# TODO: switch to built-in `rotate_left` when available
 def bit_rotate(v: Value, amount: int) -> Value:
-    """Bit-rotate v by amount"""
+    """Bit-rotate `v` left by `amount`"""
 
     l = len(v)
 

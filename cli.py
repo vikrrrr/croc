@@ -20,7 +20,7 @@ if __name__ == "__main__":
         "--rounds-per-cycle",
         type=int,
         default="2",
-        help="amount of rounds to perform per cycle (2 min, mod 2)",
+        help="amount of rounds to perform per cycle (2 min, `--rounds` max, mod 2)",
     )
     main_parser(parser)
 
