@@ -1,6 +1,6 @@
 from croc.chacha import QuarterRound, DoubleRound, StagedChaChaRounds, Rounds
-from nmigen import *
-from nmigen.back.pysim import *
+from amaranth import *
+from amaranth.sim import *
 
 from .chacha_reference import (
     quarter_round,

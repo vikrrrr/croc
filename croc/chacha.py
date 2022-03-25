@@ -1,8 +1,8 @@
 from functools import partial
 from enum import Enum, unique
 
-from nmigen import *
-from nmigen.build import Platform
+from amaranth import *
+from amaranth.build import Platform
 
 from .util import bit_rotate, window
 

@@ -1,7 +1,7 @@
 # croc
 
 ChaCha stream cipher modules written in Python, described using
-[nMigen](https://github.com/nmigen/nmigen/).
+[Amaranth](https://github.com/amaranth-lang/amaranth/).
 
 ## Disclaimer
 

@@ -1,7 +1,7 @@
 from collections.abc import Iterable, Sequence
 from typing import TypeVar
 
-from nmigen import *
+from amaranth import *
 
 T = TypeVar("T")
 

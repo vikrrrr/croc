@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
-from nmigen import *
-from nmigen.cli import main_runner, main_parser
+from amaranth import *
+from amaranth.cli import main_runner, main_parser
 
 from croc.chacha import StagedChaChaRounds, Rounds
 
